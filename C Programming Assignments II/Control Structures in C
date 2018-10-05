@@ -1,1 +1,62 @@
 Q.1 What are control structures in C? Explain.
+-> In C, we have 32 standard keywords and out of them 12 (the keywords in the second column of the following table) are control statements.
+
+These statements control the flow of the program and out of them some are selection statements, 
+some are iterative statements and some other are jumping statements.
+
+1. The if statement in C language is used to perform operation on the basis of condition. By using if-else statement, you can perform operation either condition is true or false.
+
+	There are many ways to use if statement in C language:
+
+	If statement
+		The single if statement in C language is used to execute the code if condition is true.
+		The syntax of if statement is given below:
+		
+		Snippets:
+			if(expression){  
+				//code to be executed  
+			}  
+		
+	If-else statement
+		The if-else statement in C language is used to execute the code if condition is true or false.
+		The syntax of if-else statement is given below:
+		
+		Snippets:
+			if(expression){  
+				//code to be executed if condition is true  
+			}else{  
+				//code to be executed if condition is false  
+			}
+			
+	If else-if ladder
+		The if else-if statement is used to execute one code from multiple conditions.
+		The syntax of if else-if statement is given below:
+		
+		Snippets:
+			if(condition1){  
+				//code to be executed if condition1 is true  
+			}else if(condition2){  
+				//code to be executed if condition2 is true  
+			}  
+			else if(condition3){  
+				//code to be executed if condition3 is true  
+			}  
+			...  
+			else{  
+				//code to be executed if all the conditions are false  
+			}
+			
+	Nested if
+		A nested if is an if statement that is the target of another if statement.
+		Nested if statements means an if statement inside another if statement. 
+		C allows us to nest if statements within if statements. i.e, we can place an if statement inside another if statement.
+		
+		Snippets:
+			if (condition1){
+			
+			   // Executes when condition1 is true
+			   if (condition2) 
+			   {
+				  // Executes when condition2 is true
+			   }
+			}
