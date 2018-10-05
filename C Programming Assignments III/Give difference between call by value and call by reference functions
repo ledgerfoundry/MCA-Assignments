@@ -1,0 +1,47 @@
+Q.3 Give difference between call value and call by reference functions
+-> Call by value in C:
+	1) In call by value, original value is not modified.
+	2) In call by value, value being passed to the function is locally stored by the function parameter in stack memory location.
+	3) If you change the value of function parameter, it is changed for the current function only.
+	4) It will not change the value of variable inside the caller method such as main().
+	5) A copy of value is passed to the function.
+	6) Changes made inside the function is not reflected on other functions.
+	7) Actual and formal arguments will be created in different memory location.
+	
+	Let's try to understand the concept of call by value in c language by the example given below:
+		#include<stdio.h>  
+		void change(int num) {    
+			printf("Before adding value inside function num=%d \n",num);    
+			num=num+100;    
+			printf("After adding value inside function num=%d \n", num);    
+		}    
+		int main() {    
+			int x=100;    
+			printf("Before function call x=%d \n", x);    
+			change(x);//passing value in function    
+			printf("After function call x=%d \n", x);    
+			return 0;  
+		}    
+	
+	Call by reference in C:
+		1) In call by reference, original value is modified because we pass reference (address).
+		2) Here, address of the value is passed in the function, so actual and formal arguments shares the same address space. 
+		3) Hence, value changed inside the function, is reflected inside as well as outside the function.
+		4) An address of value is passed to the function.
+		5) Changes made inside the function is reflected outside the function also.
+		6) Actual and formal arguments will be created in same memory location.
+		
+	Let's try to understand the concept of call by reference in c language by the example given below:
+		#include<stdio.h>  
+		void change(int *num) {    
+			printf("Before adding value inside function num=%d \n",*num);    
+			(*num) += 100;    
+			printf("After adding value inside function num=%d \n", *num);    
+		}      
+		int main() {    
+			int x=100;    
+			printf("Before function call x=%d \n", x);    
+			change(&x);//passing reference in function    
+			printf("After function call x=%d \n", x);    
+			return 0;  
+		}    
