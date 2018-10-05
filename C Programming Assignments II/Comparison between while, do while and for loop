@@ -1,1 +1,50 @@
 Q.2 Comparison between while, do while and for loop.
+-> 
+1. Definition:
+	for loop -> 
+		a) The for loop in C language is also used to iterate the statement or a part of the program several times, like while and do-while loop.
+		b) But, we can initialize and increment or decrement the variable also at the time of checking the condition in for loop.
+		c) Unlike do while loop, the condition or expression in for loop is given before the statement, so it may execute the statement 0 or more times.
+	
+	while loop ->
+		a) The while loop in C language is used to iterate the part of program or statements many times.
+		b) In while loop, condition is given before the statement.
+		c) So it is different from the do while loop.
+		d) It can execute the statements 0 or more times.
+	
+	do while loop ->
+		a) To execute a part of program or code several times, we can use do-while loop of C language.
+		b) The code given between the do and while block will be executed until condition is true.
+		c) In do while loop, statement is given before the condition, so statement or code will be executed at lease one time.
+		d) In other words, we can say it is executed 1 or more times.
+
+2. When to use what?:
+	for loop -> For loop is better if number of iteration is known by the programmer.
+	
+	while loop -> The C language while loop should be used if number of iteration is uncertain or unknown.
+	
+	do while loop -> It is used when we have to execute the code at least once.
+	
+3. for loop (snytax):
+		for(initialization; condition; updating), { 
+			//Statements 
+		}
+		
+	while loop (syntax):
+		while(condition), {
+			//Statements
+		}
+	
+	do while loop (syntax):
+		do{
+			//Statements
+		}while(condition);
+		
+4. for loop and while loop is an entry controlled loop, whereas do while loop is an exit controlled loop.
+5. In for loop and while loop, if the condition is not true for the first time than control will never enter in a loop, 
+	whereas even if the condition is not true for the first time the control will enter in a loop.
+6. There is no semicolon (;) after the condition in the syntax of the for loop and while loop.
+	But, after the condition in the syntax of the do while loop there is semicolon (;).
+7. In for loop, initialization and updating is the part of the syntax.
+	On the other hand, in case of while and do while loop, initialization and updating is not the part of the syntax.
+	
