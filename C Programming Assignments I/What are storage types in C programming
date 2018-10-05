@@ -19,7 +19,6 @@ Q.3 What are storage types in C programming?
 				Also, a normal global variable can be made extern as well by placing the ‘extern’ keyword before its declaration/definition in any function/block.
 				This basically signifies that we are not initializing a new variable but instead we are using/accessing the global variable only. 
 				The main purpose of using extern variables is that they can be accessed between two different files which are part of a large program.
-				For more information on how extern variables work, have a look at this link.
 
 		3. static: This storage class is used to declare static variables which are popularly used while writing programs in C language.
 				Static variables have a property of preserving their value even after they are out of their scope!

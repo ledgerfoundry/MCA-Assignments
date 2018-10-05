@@ -1,0 +1,58 @@
+Q.4 What are escape characters?
+-> In C programming language, there are 256 numbers of characters in character set.
+	The entire character set is divided into 2 parts i.e. the ASCII characters set and the extended ASCII characters set.
+	But apart from that, some other characters are also there which are not the part of any characters set, known as ESCAPE characters.
+
+	List of Escape Sequences:
+		\a Alarm or Beep
+		\b Backspace
+		\f Form Feed
+		\n New Line
+		\r Carriage Return
+		\t Tab (Horizontal)
+		\v Vertical Tab
+		\\ Backslash
+		\' Single Quote
+		\" Double Quote
+		\? Question Mark
+		\ooo octal number
+		\xhh hexadecimal number
+		\0 Null
+
+	Example:
+		#include <stdio.h>
+		int main(void){
+			
+			printf("My mobile number "
+			"is 7\a8\a7\a3\a9\a2\a3\a4\a0\a8\a");
+			
+			printf("Hello Geeks\b\b\b\bF");
+			
+			printf("Hello\n");
+			
+			printf("GeeksforGeeks");
+			
+			printf("Hello \t GFG");
+			
+			printf("Hello friends");
+			
+			printf("\v Welcome to GFG");
+			
+			printf("Hello fri \r ends");
+			
+			printf("Hello\\GFG");
+			
+			printf("\' Hello Geeks\n");
+			
+			printf("\" Hello Geeks");
+			
+			printf("\?\?!\n");
+			
+			char* s = "A\0725";
+			printf("%s", s);
+			
+			char* s = "B\x4a";
+			printf("%s", s);
+			
+			return (0);
+		}
