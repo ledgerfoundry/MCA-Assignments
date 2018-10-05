@@ -1,0 +1,55 @@
+Q.3 putchar() and puts
+-> putchar(): The C library function int putchar(int char) writes a character (an unsigned char) specified by the argument char to stdout.
+
+	Declaration:
+		Following is the declaration for putchar() function.
+		- int putchar(int char)
+
+	Parameters:
+		char − This is the character to be written. This is passed as its int promotion.
+		
+	Returns:
+		This function returns the character written as an unsigned char cast to an int or EOF on error.
+
+	Example:
+		The following example shows the usage of putchar() function.
+			#include <stdio.h>
+			int main () {
+				char ch;
+				
+				for(ch = 'A' ; ch <= 'Z' ; ch++) {
+					putchar(ch);
+				}
+			
+				return(0);
+			}
+			
+	puts(): The C library function int puts(const char *str) writes a string to stdout up to but not including the null character.
+			A newline character is appended to the output.
+
+	Declaration:		
+		Following is the declaration for puts() function.
+			- int puts(const char *str)
+
+	Parameters:
+		str − This is the C string to be written.
+		
+	Returns:
+		If successful, non-negative value is returned. On error, the function returns EOF.
+		
+	Example:
+		The following example shows the usage of puts() function.
+			#include <stdio.h>
+			#include <string.h>
+			int main () {
+				char str1[15];
+				char str2[15];
+				
+				strcpy(str1, "tutorialspoint");
+				strcpy(str2, "compileonline");
+				
+				puts(str1);
+				puts(str2);
+			
+				return(0);
+			}
