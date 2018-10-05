@@ -1,1 +1,11 @@
 Q.3 Difference between if else ladder and switch statements.
+-> The difference between switch case and else if ladder is as follows:
+
+1. In else if ladder, the control goes through the every else if statement until it finds true value of the statement or it comes to the end of the else if ladder.
+Whereas in switch case, as per the value of the switch, the control jumps to the corresponding case.
+2. The switch case is more compact than lot of nested else if. So, switch is considered to be more readable.
+3. The use of break statement in switch is essential but there is no need of use of break in else if ladder.
+4. The variable data type that can be used in expression of switch is integer only where as in else if ladder accepts integer type as well as character.
+5. Another difference between switch case and else if ladder is that the switch statement is considered to be less flexible than the else if ladder, because it allows only testing of a single expression against a list of discrete values.
+6. Since the compiler is capable of optimizing the switch statement, they are generally considered to be more efficient. Each case in switch statement is independent of the previous one. In case of else if ladder, the code needs to be processed in the order determined by the programmer.
+7. Switch case statement work on the basis of equality operator whereas else if ladder works on the basis of true false( zero/non-zero) basis.
