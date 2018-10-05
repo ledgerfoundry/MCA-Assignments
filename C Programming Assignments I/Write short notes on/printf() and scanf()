@@ -1,0 +1,62 @@
+Q.5 printf() and scanf()
+-> printf() and scanf() functions are inbuilt library functions in C programming language which are available in C library by default.
+	These functions are declared and related macros are defined in “stdio.h” which is a header file in C language.
+	We have to include “stdio.h” file to make use of these printf() and scanf() library functions in C language.
+
+	printf() function in C language:
+		1. In C programming language, printf() function is used to print the “character, string, float, integer, 
+			octal and hexadecimal values” onto the output screen.
+		2. We use printf() function with %d format specifier to display the value of an integer variable.
+		3. Similarly %c is used to display character, %f for float variable, %s for string variable, %lf for double and %x for hexadecimal variable.
+		4. To generate a newline,we use “\n” in C printf() statement.
+
+	Note:
+		C language is case sensitive. For example, printf() and scanf() are different from Printf() and Scanf().
+		All characters in printf() and scanf() functions must be in lower case.
+		
+	EXAMPLE PROGRAM FOR C PRINTF() FUNCTION:
+		#include <stdio.h>
+		int main(){
+			char ch = 'A';
+			char str[20] = "fresh2refresh.com";
+			float flt = 10.234;
+			int no = 150;
+			double dbl = 20.123456;
+			
+			printf("Character is %c \n", ch);
+			
+			printf("String is %s \n" , str);
+			
+			printf("Float value is %f \n", flt);
+			
+			printf("Integer value is %d\n" , no);
+			
+			printf("Double value is %lf \n", dbl);
+			
+			printf("Octal value is %o \n", no);
+			
+			printf("Hexadecimal value is %x \n", no);
+			
+			return 0;
+		}
+
+	SCANF() FUNCTION IN C LANGUAGE:
+		1. In C programming language, scanf() function is used to read character, string, numeric data from keyboard.
+		2. Consider below example program where user enters a character. This value is assigned to the variable “ch” and then displayed.
+		3. Then, user enters a string and this value is assigned to the variable “str” and then displayed.
+
+	EXAMPLE PROGRAM FOR PRINTF() AND SCANF() FUNCTIONS IN C PROGRAMMING LANGUAGE:
+		#include <stdio.h>
+		int main(){
+			char ch;
+			char str[100];
+			
+			printf("Enter any character \n");
+			scanf("%c", &ch);
+			
+			printf("Entered character is %c \n", ch);
+			printf("Enter any string ( upto 100 character ) \n");
+			scanf("%s", &str);
+			
+			printf("Entered string is %s \n", str);
+		}
