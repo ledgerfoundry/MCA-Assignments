@@ -1,4 +1,4 @@
-Q.2 getchar() and gets()
+Q.3 getchar() and gets()
 -> getchar(): The C library function int getchar(void) gets a character (an unsigned char) from stdin.
 			This is equivalent to getc with stdin as its arguement.
 

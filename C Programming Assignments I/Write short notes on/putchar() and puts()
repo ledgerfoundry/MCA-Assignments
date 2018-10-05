@@ -1,4 +1,4 @@
-Q.3 putchar() and puts
+Q.4 putchar() and puts
 -> putchar(): The C library function int putchar(int char) writes a character (an unsigned char) specified by the argument char to stdout.
 
 	Declaration:
