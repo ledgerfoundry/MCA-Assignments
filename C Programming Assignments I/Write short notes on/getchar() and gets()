@@ -1,0 +1,53 @@
+Q.2 getchar() and gets()
+-> getchar(): The C library function int getchar(void) gets a character (an unsigned char) from stdin.
+			This is equivalent to getc with stdin as its arguement.
+
+	Declaration:
+		Following is the declaration for getchar() function.
+			- int getchar(void)
+
+	Returns:
+		This function returns the character read as an unsigned char cast to an int or EOF or error.
+
+	
+	Example:
+		The following example shows the usage of getchar() function.
+			#include <stdio.h>
+			int main () {
+				char c;
+				
+				printf("Enter character: ");
+				c = getchar();
+				
+				printf("Character entered: ");
+				putchar(c);
+				
+				return(0);
+			}
+			
+	gets(): The C library function char *gets(char *str) reads a line from stdin and stores it into the string pointed to by str.
+			It stops when either the newline character is read or when the end-of-file is reached, whichever comes first.
+			
+	Declaration:
+		Following is the declaration for gets() function.
+			- char *gets(char *str)
+			
+	Parameters:
+		str − This is the pointer to an array of chars where the C string is stored.
+		
+	Returns:	
+	This function returns str on success, and NULL on error or when end of file occurs, while no characters have been read.
+	
+	Example:
+		The following example shows the usage of gets() function.
+			#include <stdio.h>
+			int main () {
+				char str[50];
+				
+				printf("Enter a string : ");
+				gets(str);
+				
+				printf("You entered: %s", str);
+				
+				return(0);
+			}
