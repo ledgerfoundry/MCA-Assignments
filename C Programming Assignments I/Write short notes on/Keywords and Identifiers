@@ -1,0 +1,37 @@
+Q.1 Keywords and Identifiers
+-> Keywrords:Keywords are preserved words that have special meaning in C
+			language. The meaning of C language keywords has already been described
+			to the C compiler. These meaning cannot be changed. Thus, keywords
+			cannot be used as variable names because that would try to change the
+			existing meaning of the keyword, which is not allowed.There are total
+			32 keywords in C language.
+			
+			auto 			double 			int 			struct
+			break 			else 			long 			switch
+			case 			enum 			register 		typedef
+			const 			extern 			return 			union
+			char 			float 			short 			unsigned
+			continue 		for 			signed 			volatile
+			default 		goto 			sizeof 			void
+			do 				if 				static 			while
+			
+	Identifiers: In C language identifiers are the names given to variables,
+				constants, functions and user-define data. These identifier are defined
+				against a set of rules.
+				
+	Rules for writing an Identifier:
+		1. An Identifier can only have alphanumeric characters (a-z , A-Z , 0-9) and underscore(_).
+		2. The first character of an identifier can only contain alphabet (a-z , A-Z) or underscore (_).
+		3. Identifiers are also case sensitive in C. For example name and Name are two different identifiers in C.
+		4. Keywords are not allowed to be used as Identifiers.
+		5. No special characters, such as semicolon, period, whitespaces, slash or comma are permitted to be used in or as Identifier.
+		
+	Declaration:
+		When we declare a variable or any function in C language program, to use it
+		we must provide a name to it, which identified it throughout the program,
+		for example:
+			
+			int myvariable = 10;
+			
+		Here myvariable is the name or identifier for the variable which stores the
+		value "10" in it.
