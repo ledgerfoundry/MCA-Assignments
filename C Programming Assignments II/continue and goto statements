@@ -1,1 +1,41 @@
 Q.4 Explain continue and goto statements.
+-> continue Statement
+The continue statement skips some statements inside the loop. The continue statement is used with decision making statement such as if...else.
+
+Syntax of continue Statement
+continue;
+
+Snippets:
+	
+	while(test expression){
+		
+		//codes
+		if(condition for continue){
+			continue;
+		}
+		
+		//codes
+	}
+	
+	for(intialization, condition, incr/dcr){
+		
+		//codes
+		if(condition for continue){
+			continue;
+		}
+		
+		//codes
+	}
+
+goto Statement
+The goto statement is used to alter the normal sequence of a C program.
+
+goto label;
+... .. ...
+... .. ...
+... .. ...
+label: 
+statement;
+
+The label is an identifier. When goto statement is encountered, control of the program jumps to label: and starts executing the code.
+
