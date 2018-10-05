@@ -18,7 +18,7 @@ Note:
 - Please do commit each time when you commit any document and leave a message if there is any issue or want to make some changes in the README file.
 - Do not push any file containing error or wrong answers.
 
-If you are unaware of git methods to update and commit the documents then please do refer this link - https://git-scm.com/doc to learn it. It will help you throught the entire journey of your degree program and will also updgrade your knowledge in terms of other technologies as the IT industries.
+If you are unaware of git methods to update and commit the documents then please do refer this link - https://git-scm.com/doc to learn it. It will help you through the entire journey of your academic degree program and will also updgrade your knowledge in terms of other technologies as the IT industries.
 
 Note:
 - The assignments has to be submitted in a file format.
