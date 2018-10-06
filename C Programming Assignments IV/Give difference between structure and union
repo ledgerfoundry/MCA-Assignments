@@ -1,0 +1,27 @@
+Q.4 Give difference between Structure and Union.
+->
+	Keyword:
+		Structure - The keyword struct is used to define a structure.
+		Union - The keyword union is used to define an union.
+		
+	Size:
+		Structure - Whe a variable is associated with a structure, the compiler allocates the memory for each member.
+					The size of structure is greater than or equal to the sum od sizes of its members.
+		Union - When a variable is associated with an union, the compiler allocates the memory by considering the size of the largest memory.
+				So, size of union is equal to the size of largest member.
+		
+	Memory:
+		Structure - Each member within a structure is assigned unique storage area of location.
+		Union - Memory allocated is shared by individual members of union.
+	
+	Value Altering:
+		Structure - Altering the value of a member will not affect other members of the structure.
+		Union - Altering the value of any of the member will alter the other member values.
+	
+	Accessing Members:
+		Structure - Individual member can be accessed at a time.
+		Union - Only one member can be accessed at a time.
+		
+	Initialization of Members:
+		Structure - Several members of a structure can initialize once.
+		Union - Only the first member of a union can be initialized.
