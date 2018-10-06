@@ -24,7 +24,7 @@ Q.1 What is function? Explain function prototying and definition.
 		4) There are other numerous library functions defined under "stdio.h", such as scanf(), fprintf(), getchar() etc.
 		5) Once you include "stdio.h" in your program, all these functions are available for use.
 
-	User-defined functions
+	User-defined functions:
 		1) As mentioned earlier, C allow programmers to define functions.
 		2) Such functions created by the user are called user-defined functions.
 		3) Depending upon the complexity and requirement of the program, you can create as many user-defined functions as you want.
