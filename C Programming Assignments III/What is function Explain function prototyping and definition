@@ -1,0 +1,65 @@
+Q.1 What is function? Explain function prototying and definition.
+-> A function is a block of code that performs a specific task.
+	Suppose, a program related to graphics needs to create a circle and color it depending upon the radius and color from the user.
+	
+	You can create two functions to solve this problem:
+		- create a circle function
+		- color function
+	
+	Dividing complex problem into small components makes program easy to understand and use.
+	
+	Types of functions in C programming:
+		Depending on whether a function is defined by the user or already included in C compilers, there are two types of functions in C programming
+
+		There are two types of functions in C programming:
+		1) Standard library functions
+		2) User defined functions
+
+	Standard library functions:
+		1) The standard library functions are built-in functions in C programming to handle tasks such as mathematical computations, I/O processing, string handling etc.
+		2) These functions are defined in the header file. When you include the header file, these functions are available for use.
+		3) For example:
+			The printf() is a standard library function to send formatted output to the screen (display output on the screen).
+			This function is defined in "stdio.h" header file.
+		4) There are other numerous library functions defined under "stdio.h", such as scanf(), fprintf(), getchar() etc.
+		5) Once you include "stdio.h" in your program, all these functions are available for use.
+
+	User-defined functions
+		1) As mentioned earlier, C allow programmers to define functions.
+		2) Such functions created by the user are called user-defined functions.
+		3) Depending upon the complexity and requirement of the program, you can create as many user-defined functions as you want.
+
+	Snippets:
+		#include <stdio.h>
+		void functionName()
+		{
+			... .. ...
+			... .. ...
+		}
+
+		int main()
+		{
+			... .. ...
+			... .. ...
+
+			functionName();
+			
+			... .. ...
+			... .. ...
+		}
+	
+	The execution of a C program begins from the main() function.
+	
+	PROTOTYPES: 
+		A prototype is just another name for a declaration of a function.
+	 
+		- double someFunction( double, int );
+		
+	Declaration and Definition:
+		1) When a function is defined at any place in the program then it is called function definition.
+		2) At the time of definition of a function actual logic is implemented with-in the function.
+		3) A function declaration does not have any body and they just have their interfaces.
+		4) A function declaration is usually declared at the top of a C source file, or in a separate header file.
+		5) A function declaration is sometime called function prototype or function signature.
+		6) A function which returns an integer, and takes two parameters a function declaration will be as follows:
+		int Demo( int par1, int par2);
