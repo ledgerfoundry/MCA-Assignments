@@ -1,60 +1,59 @@
 Q.2 What is recursive function? Explain with example.
 -> A function that calls itself is known as a recursive function. And, this technique is known as recursion.
 
-How recursion works?
-void recurse()
-{
-    ... .. ...
-    recurse();
-    ... .. ...
-}
+	Snippets:
+		void recurse()
+		{
+			... .. ...
+			recurse();
+			... .. ...
+		}
 
-int main()
-{
-    ... .. ...
-    recurse();
-    ... .. ...
-}
+		int main()
+		{
+			... .. ...
+			recurse();
+			... .. ...
+		}
 
- 
+	The recursion continues until some condition is met to prevent it.
+	To prevent infinite recursion, if...else statement (or similar approach) can be used where one branch makes the recursive call and other doesn't.
 
-The recursion continues until some condition is met to prevent it.
-To prevent infinite recursion, if...else statement (or similar approach) can be used where one branch makes the recursive call and other doesn't.
+	Example: Sum of Natural Numbers Using Recursion
+		#include <stdio.h>
+		int sum(int n);
 
-Example: Sum of Natural Numbers Using Recursion
-#include <stdio.h>
-int sum(int n);
+		int main()
+		{
+			int number, result;
 
-int main()
-{
-    int number, result;
+			printf("Enter a positive integer: ");
+			scanf("%d", &number);
 
-    printf("Enter a positive integer: ");
-    scanf("%d", &number);
+			result = sum(number);
 
-    result = sum(number);
+			printf("sum = %d", result);
+			return 0;
+		}
 
-    printf("sum = %d", result);
-    return 0;
-}
+		int sum(int num)
+		{
+			if (num!=0)
+				return num + sum(num-1); // sum() function calls itself
+			else
+				return num;
+		}
+	Output
+		Enter a positive integer:3
+		sum = 6
 
-int sum(int num)
-{
-    if (num!=0)
-        return num + sum(num-1); // sum() function calls itself
-    else
-        return num;
-}
-Output
-Enter a positive integer:3
-sum = 6
+	Initially, the sum() is called from the main() function with number passed as an argument.
+	Suppose, the value of num is 3 initially. During next function call, 2 is passed to the sum() function.
+	This process continues until num is equal to 0.
+	When num is equal to 0, the if condition fails and the else part is executed returning the sum of integers to the main() function.
 
-Initially, the sum() is called from the main() function with number passed as an argument.
-Suppose, the value of num is 3 initially. During next function call, 2 is passed to the sum() function. This process continues until num is equal to 0.
-When num is equal to 0, the if condition fails and the else part is executed returning the sum of integers to the main() function.
-
- 
-
-Advantages and Disadvantages of Recursion
-Recursion makes program elegant and cleaner. All algorithms can be defined recursively which makes it easier to visualize and prove. 
-If the speed of the program is vital then, you should avoid using recursion. Recursions use more memory and are generally slow. Instead, you can use loop.
+	Advantages and Disadvantages of Recursion
+		1) Recursion makes program elegant and cleaner.
+		2) All algorithms can be defined recursively which makes it easier to visualize and prove. 
+		3) If the speed of the program is vital then, you should avoid using recursion.
+		4) Recursions use more memory and are generally slow.Instead, you can use loop.
