@@ -1,0 +1,323 @@
+Q.2 What is string? Explain different string functions.
+-> In C, array of characters is called a string. A string is terminated with a null character \0.
+	For example:
+		"c string tutorial"
+	
+	Here, c string tutorial is a string. When compiler encounter strings, it appends a null character \0 at the end of the string.
+
+	String Declaration:
+		1) Before we can actually work with strings, we need to declare them first.
+		2) Strings are declared in a similar wayas arrays. Only difference is that, strings are of char type.
+	
+	Using arrays:
+		char s[5];
+
+	Using pointers:
+		Strings can also be declared using pointers.
+		- char *p;
+	
+	Initialization of strings:
+		In C, string can be initialized in a number of different ways.
+		For convenience and ease, both initialization and declaration are done in the same step.
+	
+	Using arrays:
+		char c[] = "abcd";
+			 OR,
+		char c[50] = "abcd";
+			 OR,
+		char c[] = {'a', 'b', 'c', 'd', '\0'};
+			 OR,
+		char c[5] = {'a', 'b', 'c', 'd', '\0'};
+
+	The given string is initialized and stored in the form of arrays as above.
+
+	Using pointers:
+	String can also be initialized using pointers as:
+	- char *c = "abcd";
+	
+	Reading Strings from user:
+		1) You can use the scanf() function to read a string like any other data types.
+		2) However, the scanf() function only takes the first entered word.
+		3) The function terminates when it encounters a white space (or just space).
+	
+	Reading words from user:
+	- char c[20];
+	- scanf("%s", c);
+	
+	Example #1: Using scanf() to read a string
+		Write a C program to illustrate how to read string from terminal.
+			#include <stdio.h>
+			int main()
+			{
+				char name[20];
+				printf("Enter name: ");
+				scanf("%s", name);
+				printf("Your name is %s.", name);
+				return 0;
+			}
+
+			Output:
+				Enter name: Dennis Ritchie
+				Your name is Dennis.
+
+	Here, program ignores Ritchie because, scanf() function takes only a single string before the white space, i.e. Dennis.
+	
+	Reading a line of text:
+		An approach to reading a full line of text is to read and store each character one by one.
+	
+	Example #2: Using getchar() to read a line of text
+		1. C program to read line of text character by character.
+		#include <stdio.h>
+		int main()
+		{
+			char name[30], ch;
+			int i = 0;
+			printf("Enter name: ");
+			while(ch != '\n')    // terminates if user hit enter
+			{
+				ch = getchar();
+				name[i] = ch;
+				i++;
+			}
+			name[i] = '\0';       // inserting null character at end
+			printf("Name: %s", name);
+			return 0;
+		}
+
+	EXPLAINATION:
+		1) In the above program, ch gets a single character from the user each time.
+		2) This process is repeated until the user enters return (enter key). Finally, the null character is inserted at the end to make it a string.
+		3) This process to take string is tedious.
+	
+	Example #3: Using standard library function to read a line of text
+		2. C program to read line of text using gets() and puts()
+		To make life easier, there are predefined functions gets() and puts in C language to read and display string respectively.
+			#include <stdio.h>
+			int main()
+			{
+				char name[30];
+				printf("Enter name: ");
+				gets(name);     //Function to read string from user.
+				printf("Name: ");
+				puts(name);    //Function to display string.
+				return 0;
+			}
+			Both programs have the same output below:
+
+			Output:
+				Enter name: Tom Hanks
+				Name: Tom Hanks
+
+	Passing Strings to Functions:
+		Strings are just char arrays. So, they can be passed to a function in a similar manner as arrays.
+	
+	#include <stdio.h>
+	void displayString(char str[]);
+
+	int main()
+	{
+		char str[50];
+		printf("Enter string: ");
+		gets(str);             
+		displayString(str);     // Passing string c to function.    
+		return 0;
+	}
+	void displayString(char str[]){
+		printf("String Output: ");
+		puts(str);
+	}
+	
+	Here, string c is passed from main() function to user-defined function displayString().
+	In function declaration, str[] is the formal argument.
+	
+	String handling functions:
+		1) There are various string operations you can perform manually like: finding the length of a string, concatenating (joining) two strings etc.
+		2) But, for programmer's ease, many of these library functions are already defined under the header file <string.h>.
+	
+	STRING FUNCTIONS:
+		1) You need to often manipulate strings according to the need of a problem.
+		2) Most, if not all, of the time string manipulation can be done manually but, this makes programming complex and large.
+		3) To solve this, C supports a large number of string handling functions in the standard library "string.h".
+	
+		Few commonly used string handling functions are discussed below:
+			Function					Work of Function
+			strlen()				Calculates the length of string
+			strcpy()				Copies a string to another string
+			strcat()				Concatenates(joins) two strings
+			strcmp()				Compares two string
+			strlwr()				Converts string to lowercase
+			strupr()				Converts string to uppercase
+		
+		Strings handling functions are defined under "string.h" header file.
+		- #include <string.h>
+		
+		Note:
+			You have to include the code below to run string handling functions.
+		
+		gets() and puts():
+			Functions gets() and puts() are two string functions to take string input from the user and display it respectively as mentioned in the previous chapter.
+				#include<stdio.h>
+
+				int main()
+				{
+					char name[30];
+					printf("Enter name: ");
+					gets(name);     //Function to read string from user.
+					printf("Name: ");
+					puts(name);    //Function to display string.
+					return 0;
+				}
+		
+		Note:
+			Though, gets() and puts() function handle strings, both these functions are defined in "stdio.h" header file.
+		
+		C strlen():
+			The strlen() function calculates the length of a given string.
+
+			C strlen() Prototype:
+			- size_t strlen(const char *str);
+			
+			The function takes a single argument, i.e, the string variable whose length is to be found, and returns the length of the string passed.
+			The strlen() function is defined in <string.h> header file.
+
+			Example: C strlen() function
+				#include <stdio.h>
+				#include <string.h>
+				int main()
+				{
+					char a[20]="Program";
+					char b[20]={'P','r','o','g','r','a','m','\0'};
+					char c[20];
+
+					printf("Enter string: ");
+					gets(c);
+
+					printf("Length of string a = %d \n",strlen(a));
+
+					//calculates the length of string before null charcter.
+					printf("Length of string b = %d \n",strlen(b));
+					printf("Length of string c = %d \n",strlen(c));
+
+					return 0;
+				}
+				
+				Output:
+					Enter string: String
+					Length of string a = 7
+					Length of string b = 7
+					Length of string c = 6
+		
+		C strcpy()
+			The strcpy() function copies the string to the another character array.
+
+			strcpy() Function prototype:
+			- char* strcpy(char* destination, const char* source);
+			
+			The strcpy() function copies the string pointed by source (including the null character) to the character array destination.
+			This function returns character array destination.
+
+			The strcpy() function is defined in string.h header file.
+
+			Example: C strcpy()
+				#include <stdio.h>
+				#include <string.h>
+
+				int main()
+				{
+					char str1[10]= "awesome";
+					char str2[10];
+					char str3[10];
+
+					strcpy(str2, str1);
+					strcpy(str3, "well");
+					puts(str2);
+					puts(str3);
+
+					return 0;
+				}
+
+				Output:
+					awesome
+					well
+
+			It is important to note that, the destination array should be large enough otherwise it may result in undefined behavior.
+			
+		C strcat()
+			The function strcat() concatenates two strings.
+
+			In C programming, strcat() concatenates (joins) two strings.
+			The strcat() function is defined in <string.h> header file.
+
+			C strcat() Prototype:
+				- char *strcat(char *dest, const char *src)
+				
+			It takes two arguments, i.e, two strings or character arrays, and stores the resultant concatenated string in the first string specified in the argument.
+
+			The pointer to the resultant string is passed as a return value.
+
+			Example: C strcat() function
+				#include <stdio.h>
+				#include <string.h>
+				int main()
+				{
+					char str1[] = "This is ", str2[] = "programiz.com";
+
+					//concatenates str1 and str2 and resultant string is stored in str1.
+					strcat(str1,str2);
+
+					puts(str1);    
+					puts(str2); 
+
+					return 0;
+				}
+				
+				Output:
+					This is studynerd.com
+					studynerd.com
+					
+		C strcmp()
+			The strcmp() function compares two strings and returns 0 if both strings are identical.
+
+			C strcmp() Prototype:
+			- int strcmp (const char* str1, const char* str2);
+			
+			The strcmp() function takes two strings and return an integer.
+			The strcmp() compares two strings character by character.
+			If the first character of two strings are equal, next character of two strings are compared.
+			This continues until the corresponding characters of two strings are different or a null character '\0' is reached.
+			It is defined in string.h header file.
+
+			Return Value from strcmp():
+			Return Value										Remarks
+			0								if both strings are identical (equal)
+			negative						if the ASCII value of first unmatched character is less than second.
+			positive integer				if the ASCII value of first unmatched character is greater than second.
+
+			Example: C strcmp() function
+				#include <stdio.h>
+				#include <string.h>
+
+				int main()
+				{
+					char str1[] = "abcd", str2[] = "abCd", str3[] = "abcd";
+					int result;
+
+					// comparing strings str1 and str2
+					result = strcmp(str1, str2);
+					printf("strcmp(str1, str2) = %d\n", result);
+
+					// comparing strings str1 and str3
+					result = strcmp(str1, str3);
+					printf("strcmp(str1, str3) = %d\n", result);
+
+					return 0;
+				}
+
+				Output:
+					strcmp(str1, str2) = 32
+					strcmp(str1, str3) = 0
+
+			The first unmatched character between string str1 and str2 is third character.
+			The ASCII value of 'c' is 99 and the ASCII value of 'C' is 67.
+			Hence, when strings str1 and str2 are compared, the return value is 32.
+			When strings str1 and str3 are compared, the result is 0 because both strings are identical.
