@@ -1,0 +1,1 @@
+Design a combinational logic circuit whose output is HIGH for odd number of 1's as input. Assume that input to the circuit is 3-bit A2 A1 A0.

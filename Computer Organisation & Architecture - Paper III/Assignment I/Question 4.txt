@@ -1,0 +1,1 @@
+Construct a logic circuit using AND, OR and NOT gates F = (A + B)’ (A + C) (B + C)’

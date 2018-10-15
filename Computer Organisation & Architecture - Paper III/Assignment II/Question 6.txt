@@ -1,0 +1,1 @@
+Define Cluster. Explain different clustering methods in detail.

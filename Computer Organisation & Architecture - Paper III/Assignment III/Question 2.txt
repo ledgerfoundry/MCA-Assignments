@@ -1,0 +1,1 @@
+Explain fetch cycle, indirect cycle and interrupt cycle with the help of diagram.

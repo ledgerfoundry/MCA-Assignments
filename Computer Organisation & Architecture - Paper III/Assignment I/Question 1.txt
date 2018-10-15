@@ -1,0 +1,1 @@
+Explain Half Adder wth logic diagram.

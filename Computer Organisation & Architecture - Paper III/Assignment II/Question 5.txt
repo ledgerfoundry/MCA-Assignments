@@ -1,0 +1,1 @@
+Explain memory hierarchy with the help of diagram.
