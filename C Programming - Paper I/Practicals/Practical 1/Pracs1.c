@@ -9,44 +9,44 @@ int main()
     /* Input week number from user */
     printf("Enter week number (1-7): ");
     scanf("%d", &week);
-
+    while (0>week && week>7)
+    {
+    printf("[ERROR] Number out of range : (1-7)");        
+    scanf("%d", &week);
+    }
     switch(week)
     {
         case 1:
             /* If week == 1 */
-            printf("Its Monday.\n");
-            printf("Its a busy day.");
+            printf("Monday.\n");
             break;
         case 2:
             /* If week == 2 */
-            printf("Its Tuesday.");
+            printf("Tuesday.\n");
             break;
         case 3:
             /* If week == 3 */
-            printf("Its Wednesday.");
+            printf("Wednesday.\n");
             break;
         case 4:
             /* If week == 4 */
-            printf("Its Thursday.\n");
-            printf("Feeling bit relaxed.");
+            printf("Thursday.\n");
             break;
         case 5:
             /* If week == 5 */
-            printf("Its Friday.");
+            printf("Friday.\n");
             break;
         case 6:
             /* If week == 6 */
-            printf("Its Saturday.\n");
-            printf("It is weekend.");
+            printf("Saturday.\n");
             break;
         case 7:
             /* If week == 7 */
-            printf("Its Sunday.\n");
-            printf("Hurray! Its holiday.");
+            printf("Sunday.\n");
             break;
         default:
             /* If week < 1 or week > 7 */
-            printf("Um! Please enter week number between 1-7.");
+            printf("Jackpot! Your lucky to get here!!!");
     }
     return 0;
 }
