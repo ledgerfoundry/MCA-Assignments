@@ -1,0 +1,1 @@
+Write a HTML code to demonstrate <frameset>. What are the advantages and disadvantages of using frames?

@@ -1,0 +1,1 @@
+Write JavaScript to accept a number from user and check whether the number given is a Fibonacci number or not.
