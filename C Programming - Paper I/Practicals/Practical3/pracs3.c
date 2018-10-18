@@ -1,30 +1,22 @@
-#include <iostream>
-using namespace std;
-
+/*Write a program to enter array element and display the contents of array?also find largest number in array and sum of all elements*/
+#include <stdio.h>
 int main()
 {
     int i, n;
-    float arr[100];
-
-    cout << "Enter total number of elements(1 to 100): ";
-    cin >> n;
-    cout << endl;
-
-    // Store number entered by the user
+    float arr[100],sum;
+    printf ("\n\tEnter total number of elements(1 to 100): \n");
+    scanf("%d",&n);
+    printf ("\n\tEnter Number \n");
     for(i = 0; i < n; ++i)
     {
-       cout << "Enter Number " << i + 1 << " : ";
-       cin >> arr[i];
+       scanf("%f",&arr[i]);
     }
-
-    // Loop to store largest number to arr[0]
+    sum= arr[0];
     for(i = 1;i < n; ++i)
     {
-       // Change < to > if you want to find the smallest element
-       if(arr[0] < arr[i])
-           arr[0] = arr[i];
+       arr[0]=(arr[0] > arr[i])?arr[0]:arr[i];
+       sum = sum + arr[i];
     }
-    cout << "Largest element = " << arr[0];
-
+printf  ("\n\tLargest element = %.0f\tSum of all elements = %.0f \n", arr[0],sum);
     return 0;
 }

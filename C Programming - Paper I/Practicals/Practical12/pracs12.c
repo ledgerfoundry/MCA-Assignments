@@ -13,6 +13,6 @@ int main()
         f = f * i;
         i++;
     }
-    printf("Factorial: %d",f);
+    printf("Factorial: %d\n",f);
     return 0; 
 }
