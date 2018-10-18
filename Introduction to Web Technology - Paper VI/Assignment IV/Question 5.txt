@@ -1,0 +1,1 @@
+What is the difference between Application and Session object? Explain with example.

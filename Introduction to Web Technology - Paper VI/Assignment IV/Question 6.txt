@@ -1,0 +1,1 @@
+Explain linking between frames along with examples. Explain the advantages and disadvantages of frames.

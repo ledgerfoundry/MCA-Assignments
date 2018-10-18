@@ -1,0 +1,1 @@
+Discuss the role of a Bus in computer organization. Explain various bus interconnection structures.

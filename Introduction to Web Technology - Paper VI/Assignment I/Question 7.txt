@@ -1,0 +1,1 @@
+Explain Array as Object in JavaScript with at least four methods.

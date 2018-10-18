@@ -1,0 +1,2 @@
+Simplify the Boolean function F(a, b, c, d) = Σ(0, 1, 2, 5, 8, 9, 10) using four variable map in sum of product form. 
+Also draw the circuit diagram of the simplified equation.

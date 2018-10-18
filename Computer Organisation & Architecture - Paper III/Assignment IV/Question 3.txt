@@ -1,0 +1,1 @@
+What is an I/O module? Discuss with the help of a diagram, the functioning of I/O module.

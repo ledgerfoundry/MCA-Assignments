@@ -1,0 +1,1 @@
+Define flip flop. Explain the working of JK FF with logic diagram.
