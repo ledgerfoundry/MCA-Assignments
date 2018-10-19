@@ -1,1 +1,102 @@
 List and explain different addressing modes with suitable examples
+-> The term addressing modes refers to the way in which the operand of an instruction is specified. Information contained in the instruction code is the value of the operand or the address of the result/operand. Following are the main addressing modes that are used on various platforms and architectures.
+ 
+1) Immediate Mode 
+The operand is an immediate value is stored explicitly in the instruction: 
+Example: SPIM ( opcode dest, source) 
+li $11, 3 // loads the immediate value of 3 into register $11 
+li $9, 8 // loads the immediate value of 8 into register $9
+Example : (textbook uses instructions type like, opcode source, dest) 
+move #200, R0; // move immediate value 200 in register R0 
+ 
+2) Index Mode
+The address of the operand is obtained by adding to the contents of the general register (called index register) a constant value. The number of the index register and the constant value are included in the instruction code. Index Mode is used to access an array whose elements are in successive memory locations. The content of the instruction code, represents the starting address of the array and the value of the index register, and the index value of the current element. By incrementing or decrementing index register different element of the array can be accessed. 
+Example: SPIM/SAL - Accessing Arrays 
+.data
+array1: .byte 1,2,3,4,5,6
+.text
+__start:
+move $3, $0 		# $3 initialize index register with 0
+add $3, $3,4 		# compute the index value of the fifth element
+sb $0, array1($3) 	# array1[4]=0
+			# store byte 0 in the fifth element of the array
+			# index addressing mode
+done
+3) Indirect Mode 
+The effective address of the operand is the contents of a register or main memory location, location whose address appears in the instruction. Indirection is noted by placing the name of the register or the memory address given in the instruction in parentheses. The register or memory location that contains the address of the operand is a pointer. When an execution takes place in such mode, instruction may be told to go to a specific address. Once it's there, instead of finding an operand, it finds an address where the operand is located.
+NOTE: 
+Two memory accesses are required in order to obtain the value of the operand (fetch operand address and fetch operand value).
+Example: (textbook) ADD (A), R0 
+(address A is embedded in the instruction code and (A) is the operand address = pointer variable) 
+Example: SPIM - simulating pointers and indirect register addressing 
+The following "C" code: 
+int *alpha=0x00002004, q=5;
+*alpha = q;
+could be translated into the following assembly code: 
+alpha: .word 0x00002004 # alpha is and address variable # address value is 0x00002004
+q: .word 5
+....
+lw $10,q 	# load word value from address q in into $10
+		# $10 is 5
+lw $11,alpha 	# $11 gets the value 0x0002004
+		# this is similar with a load immediate address value
+sw $10,($11) 	# store value from register $10 at memory location
+		# whose address is given by the contents of register $11
+		# (store 5 at address 0x00002004)
+Example: SPIM/SAL - - array pointers and indirect register addressing 
+.data
+array1: .byte 1,2,3,4,5,6
+.text
+__start:
+la $3, array1 	# array1 is direct addressing mode
+add $3, $3,4 	# compute the address of the fifth element
+sb $0, ($3) 	# array1[4]=0 , byte accessing
+		# indirect addressing mode
+done
+ 
+4) Absolute (Direct) Mode 
+The address of the operand is embedded in the instruction code. 
+Example: (SPIM) 
+beta: .word 2000
+
+lw $11, beta 	# load word (32 -bit quantity) at address beta into register $11
+		# address of the word is embedded in the instruction code
+		# (register $11 will receive value 2000)
+5) Register Mode 
+The name (the number) of the CPU register is embedded in the instruction. The register contains the value of the operand. The number of bits used to specify the register depends on the total number of registers from the processor set. 
+Example (SPIM) 
+add $14,$14,$13     # add contents of register $13 plus contents of 
+		    # register $14 and save the result in register $14
+No memory access is required for the operand specified in register mode. 
+6) Displacement Mode 
+Similar to index mode, except instead of a index register a base register will be used. Base register contains a pointer to a memory location. An integer (constant) is also referred to as a displacement. The address of the operand is obtained by adding the contents of the base register plus the constant. The difference between index mode and displacement mode is in the number of bits used to represent the constant. When the constant is represented a number of bits to access the memory, then we have index mode. Index mode is more appropriate for array accessing; displacement mode is more appropriate for structure (records) accessing. 
+Example: SPIM/SAL - Accessing fields in structures 
+.data
+student: .word 10000 #field code
+.ascii "Smith" #field name
+.byte # field test
+.byte 80,80,90,100 # fields hw1,hw2,hw3,hw4
+.text
+__start:
+la $3, student 	# load address of the structure in $3
+		# $3 base register
+add $17,$0,90 	# value 90 in register $17
+		# displacement of field "test" is 9 bytes
+		#
+sb $17, 9($3) 	# store contents of register $17 in field "test"
+		# displacement addressing mode
+done
+7) Autoincrement /Autodecrement Mode 
+A special case of indirect register mode. The register whose number is included in the instruction code, contains the address of the operand. Autoincrement Mode = after operand addressing , the contents of the register is incremented. Decrement Mode = before operand addressing, the contents of the register is decrement.
+Example: SPIM/SAL - - simulating autoincrement/autodecrement addressing mode 
+(MIPS has no autoincrement/autodecrement mode) 
+lw $3, array1($17) 	#load in reg. $3 word at address array1($17)
+addi $17,$17,4 		#increment address (32-bit words) after accessing
+		 	   #operand this can be re-written in a "autoincrement like mode":
+lw+ $3,array1($17) 	   # lw+ is not a real MIPS instruction
+subi $17,$17,4 		   # decrement address before accessing the operand
+lw $3,array1($17)
+
+NOTE: the above sequence can be re-rewritten proposing an "autodecrement instruction", not real in MIPS architecture.
+
+-lw $3, array1($17) 
