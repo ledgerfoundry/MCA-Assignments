@@ -1,0 +1,32 @@
+What is RAD model- advantages, disadvantages and when to use it?
+-> RAD model is Rapid Application Development model. It is a type of incremental model. In RAD model the components or functions are developed in parallel as if they were mini projects. The developments are time boxed, delivered and then assembled into a working prototype. 
+
+This can quickly give the customer something to see and use and to provide feedback regarding the delivery and their requirements.
+
+The phases in the rapid application development (RAD) model are:
+
+Business modeling: The information flow is identified between various business functions.
+Data modeling: Information gathered from business modeling is used to define data objects that are needed for the business.
+Process modeling: Data objects defined in data modeling are converted to achieve the business information flow to achieve some specific business objective. Description are identified and created for CRUD of data objects.
+Application generation: Automated tools are used to convert process models into code and the actual system.
+Testing and turnover: Test new components and all the interfaces.
+
+Advantages of the RAD model:
+
+Reduced development time.
+Increases reusability of components
+Quick initial reviews occur
+Encourages customer feedback
+Integration from very beginning solves a lot of integration issues.
+Disadvantages of RAD model:
+
+Depends on strong team and individual performances for identifying business requirements.
+Only system that can be modularized can be built using RAD
+Requires highly skilled developers/designers.
+High dependency on modeling skills
+Inapplicable to cheaper projects as cost of modeling and automated code generation is very high.
+ When to use RAD model:
+
+RAD should be used when there is a need to create a system that can be modularized in 2-3 months of time.
+It should be used if there’s high availability of designers for modeling and the budget is high enough to afford their cost along with the cost of automated code generating tools.
+RAD SDLC model should be chosen only if resources with high business knowledge are available and there is a need to produce the system in a short span of time (2-3 months).
