@@ -1,1 +1,0 @@
-Explain types of lists in HTML. Write HTML code to demonstrate it.
