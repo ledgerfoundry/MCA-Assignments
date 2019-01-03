@@ -1,1 +1,0 @@
-Explain date object in JavaScript with atleast five methods.
