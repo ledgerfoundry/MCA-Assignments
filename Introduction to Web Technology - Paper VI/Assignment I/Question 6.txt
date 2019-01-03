@@ -1,1 +1,0 @@
-Write Html code to accept input from user for course registration input includes name, age, course id, email id. Write JavaScript for validating data.
