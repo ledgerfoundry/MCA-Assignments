@@ -1,1 +1,0 @@
-How many types of dialog boxes can be created using JavaScript? Write how to create them and about their usage.
