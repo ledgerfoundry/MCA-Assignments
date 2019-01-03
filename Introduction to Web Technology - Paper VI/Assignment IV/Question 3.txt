@@ -1,1 +1,0 @@
-What is Event and Event handlers in JavaScript? Write JavaScript to demonstrate event handling in JavaScript.
