@@ -1,2 +1,0 @@
-Explain user-defined objects and user-defined functions in JavaScript
-along with example.
